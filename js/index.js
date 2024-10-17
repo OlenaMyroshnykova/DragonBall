@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://dragonball-api.com/api/characters?limit=10'; // URL для получения персонажей с ограничением на 10 персонажей
+    const apiUrl = 'https://dragonball-api.com/api/characters?limit=10';
 
     // Функция для загрузки всех персонажей
     async function loadCharacters() {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCharacters(characters);
     }
 
-    // Функция для получения данных с учетом новой структуры (items и links)
+    // Функция для получения данных с учетом новой структуры
     async function fetchAllPages(url) {
         let results = [];
         let nextPage = url;
@@ -17,18 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!response.ok) {
                     throw new Error(`Ошибка HTTP: ${response.status}`);
                 }
-
                 const data = await response.json();
 
-                // Проверяем, существует ли поле "items"
                 if (data.items) {
-                    results = results.concat(data.items); // Добавляем элементы из текущей страницы
+                    results = results.concat(data.items);
                 } else {
                     console.warn('Нет поля "items" в данных:', data);
-                    break; // Прерываем, если не найдено
+                    break;
                 }
 
-                // Переходим к следующей странице, если она существует
                 nextPage = data.links && data.links.next ? data.links.next : null;
             }
         } catch (error) {
@@ -37,38 +34,52 @@ document.addEventListener('DOMContentLoaded', () => {
         return results;
     }
 
-    // Функция для отображения персонажей на странице
+    // Функция для отображения карточек персонажей на странице
     function displayCharacters(characters) {
         const characterList = document.querySelector('.character-list');
         characterList.innerHTML = '';
 
         characters.forEach(character => {
-            console.log(character); // Выводим данные персонажа в консоль для отладки
-
             const card = document.createElement('div');
             card.className = 'character-card';
 
-            // Отображаем информацию персонажа
             card.innerHTML = `
                 <img src="${character.image || 'https://via.placeholder.com/150'}" alt="${character.name}">
-                <h3><strong>Name:</strong></h3>
-                <p class="idP">${character.name || 'Unknown'}</p>
-                <h3><strong>Race:</strong></h3>
-                <p>${character.race || 'Unknown'}</p>
-                <h3><strong>Gender:</strong></h3>
-                <p>${character.gender || 'Unknown'}</p>
-                <h3><strong>Base KI:</strong></h3>
-                <p>${character.ki || 'Not Available'}</p>
-                <h3><strong>Total KI:</strong></h3>
-                <p>${character.maxKi || 'Not Available'}</p>
+                <div class="character-info">
+                    <h3>${character.name}</h3>
+                    <p><strong>Race:</strong> ${character.race || 'Unknown'}</p>
+                    <p><strong>Base KI:</strong> ${character.ki || 'Not Available'}</p>
+                    <p><strong>Affiliation:</strong> ${character.affiliation || 'Unknown'}</p>
+                </div>
             `;
             characterList.appendChild(card);
+        });
+
+        // Добавляем анимацию появления карточек
+        observeCards();
+    }
+
+    // Настройка Intersection Observer для анимации подгрузки
+    function observeCards() {
+        const cards = document.querySelectorAll('.character-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');  // Карточка появляется
+                    observer.unobserve(entry.target);  // Прекращаем отслеживание
+                }
+            });
+        }, { threshold: 0.1 });  // Анимация срабатывает, когда карточка на 10% видна
+
+        cards.forEach(card => {
+            observer.observe(card);
         });
     }
 
     // Загрузка персонажей при загрузке страницы
     loadCharacters();
 });
+
 
 
 
