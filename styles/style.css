@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #573c02;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.character-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.character-card {
+    background-color:  #f8ab05;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 600px;
+    padding: 10px;
+    align-items: center;
+    display: flex; /* Используем Flexbox для расположения изображений и текста */
+    flex-direction: column;
+    
+    gap: 10px; /* Добавляем отступы между блоками */
+}
+
+.character-card img {
+    max-width: calc(auto);
+    height: 20vh;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.character-info {
+    text-align: left; /* Текст выравнивается по левому краю */
+    width: 100%; /* Ширина текста занимает 100% родительского блока */
+}
+
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+h3{
+    text-align: left;
+}
+.idP{
+    text-align: left;
+    color: white; 
+}
