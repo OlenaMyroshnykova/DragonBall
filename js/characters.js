@@ -11,18 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let nextPage = url;
         while (nextPage) {
             const response = await fetch(nextPage);
-            if (!response.ok) {
-                throw new Error(`Ошибка HTTP: ${response.status}`);
-            }
             const data = await response.json();
-
-            if (data.items) {
-                results = results.concat(data.items);
-            } else {
-                console.warn('Нет поля "items" в данных:', data);
-                break;
-            }
-
+            results = results.concat(data.items);
             nextPage = data.links && data.links.next ? data.links.next : null;
         }
         return results;
@@ -70,3 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     loadCharacters();
 });
+
+
+
+
+

@@ -7,7 +7,7 @@
 }
 
 .character-card {
-    background-color: white;
+    background-color: rgba(255, 247, 5, 0.411);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 300px;
@@ -22,12 +22,14 @@
 
 .character-card:hover img {
     transform: scale(1.5);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.8);
 }
 
 .character-card img {
     width: auto;  
     height: 300px;
     object-fit: contain;
+    transition: box-shadow 0.3s ease;
 }
 
 .character-info {
@@ -39,7 +41,7 @@
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 28px;
-    color: #f84d04;
+    color: #c84107;
 }
 
 .character-info h4 {
