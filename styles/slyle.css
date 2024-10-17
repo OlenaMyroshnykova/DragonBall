@@ -1,3 +1,7 @@
+@import url("character.css");
+@import url("planets.css");
+@import url("index.css");
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -38,6 +42,8 @@ a {
     color: #61dafb;
     text-decoration: none;
     font-size: 2vw;
+    text-decoration: underline;
+    padding: 30px;
 }
 
 .main-link:hover,
@@ -54,3 +60,4 @@ footer {
     box-shadow: 0px 0px 8px 9px rgba(34, 60, 80, 0.28);
     padding: 1px;
 }
+

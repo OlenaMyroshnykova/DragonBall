@@ -1,4 +1,4 @@
-.character-list {
+.planets-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,50 +6,50 @@
     padding: 20px;
 }
 
-.character-card {
+.planet-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 20vw;
     padding: 10px;
     text-align: center;
 }
 
-.character-card.visible {
+.planet-card.visible {
     opacity: 1; 
     transform: translateY(0);  
 }
 
-.character-card:hover img {
+.planet-card:hover img {
     transform: scale(1.5);
 }
 
-.character-card img {
+.planet-card img {
     width: auto;  
-    height: 300px;
+    height: 20vh;
     object-fit: contain;
 }
 
-.character-info {
+.planet-info {
     padding: 20px;
-    background-color: #1c1c1c;
+    background-color: #023745;
 }
 
-.character-info h3 {
+.planet-info h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 28px;
-    color: #f84d04;
+    font-size: 68px;
+    color: #0c0c0c;
 }
 
-.character-info h4 {
+.planet-info h4 {
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 20px;
     color: #ccc;
 }
 
-.character-info p {
+.planet-info p {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;

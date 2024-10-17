@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = 'https://dragonball-api.com/api/planets?limit=10';
 
     async function loadCharacters() {
-        const characters = await fetchAllPages(apiUrl);
-        displayCharacters(characters);
+        const planets = await fetchAllPages(apiUrl);
+        displayCharacters(planets);
     }
 
     async function fetchAllPages(url) {
@@ -11,43 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
         let nextPage = url;
         while (nextPage) {
             const response = await fetch(nextPage);
-            if (!response.ok) {
-                throw new Error(`Ошибка HTTP: ${response.status}`);
-            }
             const data = await response.json();
-
-            if (data.items) {
-                results = results.concat(data.items);
-            } else {
-                console.warn('Нет поля "items" в данных:', data);
-                break;
-            }
-
+            results = results.concat(data.items);
             nextPage = data.links && data.links.next ? data.links.next : null;
         }
         return results;
     }
 
-    function displayCharacters(characters) {
-        const characterList = document.querySelector('.planets-list');
-        characterList.innerHTML = '';
+    function displayCharacters(planets) {
+        const planetsList = document.querySelector('.planets-list');
+        planetsList.innerHTML = '';
 
-        characters.forEach(character => {
+        planets.forEach(planet => {
             const card = document.createElement('div');
-            card.className = 'character-card';
-
+            card.className = 'planet-card';
+            let isDestroyed = "No";
+            console.log(planet.isDestroyed);
+            if (planet.isDestroyed === true) {
+                isDestroyed = "Sí";
+            }
             card.innerHTML = `
-                <img src="${character.image || 'https://via.placeholder.com/150'}" alt="${character.name}">
-                <div class="character-info">
-                    <h3>${character.name}</h3>
-                    <h4>${character.race || 'Unknown'}</h4>
-                    <h4><strong>Base KI:</strong></h4>
-                    <p> ${character.ki || 'Not Available'}</p>
-                    <h4><strong>Affiliation:</strong></h4>
-                    <p> ${character.affiliation || 'Unknown'}</p>
+                <h3>${planet.name}</h3>
+                <img src="${planet.image || 'https://via.placeholder.com/150'}" alt="${planet.name}">
+                <div class="planet-info">
+                    <h4><strong>Destroyed:</strong></h4>
+                    <p> ${isDestroyed}</p>
                 </div>
             `;
-            characterList.appendChild(card);
+            planetsList.appendChild(card);
         });
 
         observeCards();
