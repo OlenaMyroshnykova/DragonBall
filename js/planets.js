@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'planet-card';
             let isDestroyed = "No";
-            console.log(planet.isDestroyed);
             if (planet.isDestroyed === true) {
                 isDestroyed = "Sí";
             }
