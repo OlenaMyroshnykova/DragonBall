@@ -1,15 +1,57 @@
-.character-list, .planet-list {
+.character-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
 }
 
-.character-card, .planet-card {
+.character-card {
     background-color: white;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
     padding: 10px;
-    width: 200px;
     text-align: center;
+}
+
+.character-card.visible {
+    opacity: 1; 
+    transform: translateY(0);  
+}
+
+.character-card:hover img {
+    transform: scale(1.5);
+}
+
+.character-card img {
+    width: auto;  
+    height: 300px;
+    object-fit: contain;
+}
+
+.character-info {
+    padding: 20px;
+    background-color: #1c1c1c;
+}
+
+.character-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #f84d04;
+}
+
+.character-info h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.character-info p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #e0b507;
 }

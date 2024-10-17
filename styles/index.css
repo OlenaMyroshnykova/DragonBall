@@ -6,23 +6,24 @@
 }
 
 .image {
-    display: block;
-    width: 100%;
-    height: auto;
+    display: flexbox;
+    width: 100vw;
+    height: 100vh;
+    position: relative
 }
 
 .text-overlay {
+    display: flexBox;
     position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    bottom: 10%;
+    left: 5%;
     color: white;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    font-size: 38px;
-    width: 800px;
+    font-size: 1.5vw;
+    width: 30vw;
 }
 .character-list, .planet-list {
     display: flex;
