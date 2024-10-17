@@ -5,7 +5,6 @@ body {
 }
 
 header {
-    display: flex;
     background-color: #282c34;
     color: white;
     text-align: center;
@@ -56,3 +55,15 @@ footer {
     box-shadow: 0px 0px 8px 9px rgba(34, 60, 80, 0.28);
     padding: 1px;
 }
+@media (max-width: 768px) {
+    .content {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      width: calc(100% - 20px);
+    }
+  }
+  
