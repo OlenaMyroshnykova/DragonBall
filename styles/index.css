@@ -1,0 +1,31 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 38px;
+    width: 800px;
+}
+.character-list, .planet-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
