@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayCharacters(characters) {
-        const characterList = document.querySelector('.character-list');
+        const characterList = document.querySelector('.planets-list');
         characterList.innerHTML = '';
 
         characters.forEach(character => {
