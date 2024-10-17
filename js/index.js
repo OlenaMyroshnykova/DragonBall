@@ -47,9 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${character.image || 'https://via.placeholder.com/150'}" alt="${character.name}">
                 <div class="character-info">
                     <h3>${character.name}</h3>
-                    <p><strong>Race:</strong> ${character.race || 'Unknown'}</p>
-                    <p><strong>Base KI:</strong> ${character.ki || 'Not Available'}</p>
-                    <p><strong>Affiliation:</strong> ${character.affiliation || 'Unknown'}</p>
+                    <h4>${character.race || 'Unknown'}</h4>
+                    <h4><strong>Base KI:</strong></h4>
+                    <p> ${character.ki || 'Not Available'}</p>
+                    <h4><strong>Affiliation:</strong></h4>
+                    <p> ${character.affiliation || 'Unknown'}</p>
                 </div>
             `;
             characterList.appendChild(card);

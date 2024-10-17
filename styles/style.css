@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #282c34;
+    background-color: #242424;
     color: white;
     padding: 20px;
     text-align: center;
@@ -24,45 +24,56 @@ header {
 
 .character-card {
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 300px;
-    text-align: left;
-    overflow: hidden;
-    opacity: 0;  
-    transform: translateY(20px); 
-    transition: all 0.6s ease;  
+    padding: 10px;
+    text-align: center;
 }
 
 .character-card.visible {
-    opacity: 1;  
-    transform: translateY(0);
-}  
+    opacity: 1; 
+    transform: translateY(0);  
+}
+
+.character-card:hover img {
+    transform: scale(1.5);
+}
 
 .character-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: auto;  
+    height: 300px;
+    object-fit: contain;
 }
 
 .character-info {
     padding: 20px;
+    background-color: #1c1c1c;
 }
 
 .character-info h3 {
     margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #f84d04;
+}
+
+.character-info h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
     font-size: 20px;
-    color: #333;
+    color: #ccc;
 }
 
 .character-info p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #666;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #e0b507;
 }
 
 footer {
-    background-color: #282c34;
+    background-color: #242424;
     color: white;
     padding: 10px;
     text-align: center;
