@@ -13,7 +13,7 @@
 
 .text-overlay {
     position: absolute;
-    top: 2500px;
+    top: 65%;
     left: 10vh;
     color: white;
     text-align: center;
