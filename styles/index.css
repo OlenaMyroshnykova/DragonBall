@@ -1,19 +1,19 @@
 .image-container {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     position: relative;
 }
 
 .image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: cover;
 }
 
 .text-overlay {
     position: absolute;
     top: 45%;
-    left: 10vh;
+    left: 25vh;
     color: white;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
@@ -22,5 +22,6 @@
     font-size: 1.5vw;
     width: 50vh;
     height: 30hw;
+    max-width: 75vw;
 }
 

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = 'https://dragonball-api.com/api/planets?limit=10';
 
-    async function loadCharacters() {
+    async function loadPlanets() {
         const planets = await fetchAllPages(apiUrl);
-        displayCharacters(planets);
+        displayPlanets(planets);
     }
 
     async function fetchAllPages(url) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return results;
     }
 
-    function displayCharacters(planets) {
+    function displayPlanets(planets) {
         const planetsList = document.querySelector('.planets-list');
         planetsList.innerHTML = '';
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function observeCards() {
-        const cards = document.querySelectorAll('.character-card');
+        const cards = document.querySelectorAll('.planet-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -58,5 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(card);
         });
     }
-    loadCharacters();
+    loadPlanets();
 });
