@@ -9,6 +9,7 @@
     width: auto;
     height: 100vh;
     object-fit: contain;
+    max-width: 100vw;
 }
 
 .text-overlay {

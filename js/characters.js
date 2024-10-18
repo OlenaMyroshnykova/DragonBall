@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         while (nextPage) {
             const response = await fetch(nextPage);
             const data = await response.json();
+            
             results = results.concat(data.items);
             nextPage = data.links && data.links.next ? data.links.next : null;
         }
@@ -30,9 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${character.image || 'https://via.placeholder.com/150'}" alt="${character.name}">
                 <div class="character-info">
                     <h3>${character.name}</h3>
+                    
                     <h4>${character.race || 'Unknown'}</h4>
+                    
                     <h4><strong>Base KI:</strong></h4>
                     <p> ${character.ki || 'Not Available'}</p>
+                    
                     <h4><strong>Affiliation:</strong></h4>
                     <p> ${character.affiliation || 'Unknown'}</p>
                 </div>
@@ -46,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function observeCards() {
         const cards = document.querySelectorAll('.character-card');
         const observer = new IntersectionObserver((entries) => {
+            
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible'); 
