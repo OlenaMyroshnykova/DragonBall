@@ -1,6 +1,6 @@
 .image-container {
     width: auto;
-    height: 100%;
+    max-height: 100vh;
     position: relative;
 }
 
@@ -26,4 +26,3 @@
     height: 30hw;
     max-width: 75vw;
 }
-

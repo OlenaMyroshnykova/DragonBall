@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         while (nextPage) {
             const response = await fetch(nextPage);
             const data = await response.json();
+            
             results = results.concat(data.items);
             nextPage = data.links && data.links.next ? data.links.next : null;
         }
@@ -25,13 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         planets.forEach(planet => {
             const card = document.createElement('div');
             card.className = 'planet-card';
+            
             let isDestroyed = "No";
             if (planet.isDestroyed === true) {
                 isDestroyed = "Sí";
             }
+            
             card.innerHTML = `
                 <h3>${planet.name}</h3>
+                
                 <img src="${planet.image || 'https://via.placeholder.com/150'}" alt="${planet.name}">
+                <div class="hover-text">${planet.description}</div>
                 <div class="planet-info">
                     <h4><strong>Destroyed:</strong></h4>
                     <p> ${isDestroyed}</p>
