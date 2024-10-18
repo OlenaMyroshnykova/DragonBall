@@ -13,7 +13,7 @@
 .text-overlay {
     position: absolute;
     top: 45%;
-    left: 25vh;
+    left: 10%;
     color: white;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
