@@ -1,27 +1,27 @@
 .image-container {
-    display: inline-block;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    
 }
 
 .image {
-    display: block;
-    width: 100vw;
-    height: 99vh;
-    position: relative
+    width: 100%;
+    height: auto;
+    position: relative;
+    object-fit: cover;
 }
 
 .text-overlay {
-    display: block;
     position: absolute;
-    bottom: 1%;
-    left: 5%;
+    top: 2500px;
+    left: 10vh;
     color: white;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
     font-size: 1.5vw;
-    width: 30vw;
+    width: 300vh;
+    max-width: 30vw;
 }
 
