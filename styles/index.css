@@ -5,9 +5,10 @@
 }
 
 .image {
+    display: flexbox;
     width: auto;
-    height: 100%;
-    object-fit: cover;
+    height: 100vh;
+    object-fit: contain;
 }
 
 .text-overlay {
