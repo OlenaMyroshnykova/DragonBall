@@ -1,20 +1,30 @@
-.image-container {
-    width: auto;
-    max-height: 100vh;
+ .image-container {
+    display: flex;
+    width: 99.9vw;
+    height: 38vw;
     position: relative;
 }
 
-.image {
+/*.image {
     display: flexbox;
     width: auto;
     height: 100vh;
     object-fit: contain;
     max-width: 100vw;
+} */
+main {
+    display: flex;
+    background-image: url('https://dble.bn-ent.net/shared/img/keyvisual.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99.9vw;
+    height: 100vh;
+
 }
 
 .text-overlay {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 10%;
     color: white;
     text-align: center;
