@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${planet.name}</h3>
                 
                 <img src="${planet.image || 'https://via.placeholder.com/150'}" alt="${planet.name}">
+                
                 <div class="hover-text">${planet.description}</div>
                 <div class="planet-info">
                     <h4><strong>Destroyed:</strong></h4>
