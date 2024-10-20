@@ -44,25 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             characterList.appendChild(card);
         });
 
-        observeCards();
     }
 
-    function observeCards() {
-        const cards = document.querySelectorAll('.character-card');
-        const observer = new IntersectionObserver((entries) => {
-            
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible'); 
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, { threshold: 0.1 });
-
-        cards.forEach(card => {
-            observer.observe(card);
-        });
-    }
     loadCharacters();
 });
 
